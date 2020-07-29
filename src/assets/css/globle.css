@@ -1,0 +1,29 @@
+html, body, #app {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	min-width: 1336px;
+	overflow: hidden;
+    
+}
+html, body {
+	overflow: hidden;
+}
+.el-main {
+    margin: 0;
+    padding: 0;
+}
+.el-cascader__dropdown {
+	height: 200px;
+	}
+	.el-cascader-panel {
+	height: 200px;
+	}
+.ql-editor {
+	min-height: 300px;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
