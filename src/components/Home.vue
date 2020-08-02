@@ -291,6 +291,7 @@ export default {
         this.$store.commit('showDialog');
 			} else {
         this.$store.commit("changeCurrentMyList", index);
+        sessionStorage.setItem('currentMyList', this.$store.state.currentMyList)
         this.$router.replace(`/list/${name}/favorite`);
 			}
     },

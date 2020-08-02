@@ -46,6 +46,9 @@
 </template>
 <script>
 export default {
+  beforeCreate() {
+    this.$store.commit('changeCurrentMyList', JSON.parse(sessionStorage.getItem('currentMyList')))
+  },
   created() {
     this.getlist();
   },
@@ -95,6 +98,9 @@ export default {
         this.queryAlbum(this.$route.params.id);
       } else if (this.$route.params.type === "favorite") {
         this.myFavorite = true;
+        console.log(
+          this.$store.state.currentMyList
+        )
         this.listData = this.$store.state.myList[
           this.$store.state.currentMyList
         ].songs;
