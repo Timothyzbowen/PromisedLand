@@ -51,7 +51,7 @@
           <el-col :span="11">
             <span class="bible">今日经文：你要保守你的心胜过保守一切。</span>
           </el-col>
-          <el-col :span="11" class="weatherBox">
+          <el-col :span="11" class="weatherBox" v-if="tempWeather">
             <i class="el-icon-location"></i>
             <el-cascader
               v-model="city"
@@ -240,7 +240,7 @@ export default {
       this.$store.commit('playSong', JSON.parse(localStorage.getItem('lastSong')));
       this.$store.commit('addSong', JSON.parse(localStorage.getItem('lastSong')));
     }
-    if ( JSON.parse(localStorage.getItem('myFavorite')) ) { 
+    if ( JSON.parse(localStorage.getItem('myFavorite')) ) {
       this.$store.commit('changeMyList', JSON.parse(localStorage.getItem('myFavorite')));
     }
   },
@@ -254,7 +254,7 @@ export default {
         appsecret: "f2Tys05B",
         city: "",
       },
-      tempWeather: {},
+      tempWeather: null,
       weatherType: {
         雨: "el-icon-heavy-rain",
         晴: "el-icon-sunny",
@@ -513,7 +513,7 @@ export default {
     },
   },
   beforeDestroy() {
-    
+
   },
 };
 </script>
