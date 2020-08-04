@@ -14,7 +14,7 @@ export default new Vuex.Store({
 		songIndex: 0,
 		flag: 0,
 		myList: [
-			{ name: '新建歌单', cover: 'mycover', id: '100'}
+			{ name: '新建歌单', cover: 'mycover', id: '100', songs: []}
 		],
 		newList: {
 			name: '',
@@ -111,7 +111,7 @@ export default new Vuex.Store({
 		changeFlag(state, payload) {
 			state.flag = payload.flag
 		},
-		async getSongInfo(state, payload) {		
+		async getSongInfo(state, payload) {
 			let id = state.currentSongList[state.songIndex].id
 			const { data: info } = await axios.get('/song/detail?ids=' + id)
 			let songInfo = info.songs[0]
@@ -124,8 +124,8 @@ export default new Vuex.Store({
 			const { data: urlInfo } = await axios.get('/song/url?id=' + id)
 			song.url = urlInfo.data[0].url
 			state.song = song
-		},	
-		async getSongUrl(state, payload) {	
+		},
+		async getSongUrl(state, payload) {
 			let id = state.currentSongList[state.songIndex].id
 			const { data: urlInfo } = await axios.get('/song/url?id=' + id)
 			state.songUrl = urlInfo.data[0].url
