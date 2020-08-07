@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../components/Login.vue'
-import Home from '../components/Home.vue'
-import Welcome from '../components/Welcome.vue'
-import Music from '../components/music/Music.vue'
-import Hotlist from '../components/music/Hotlist.vue'
-import List from '../components/music/List.vue'
 import infiniteScroll from 'vue-infinite-scroll'
+
+const Login = () => import(/* webpackChunkName:"login_home" */ '../views/Login.vue')
+const Home = () => import(/* webpackChunkName:"login_home" */ '../views/Home.vue')
+const Welcome = () => import(/* webpackChunkName:"welcome" */ '../components/Welcome.vue')
+const Music = () => import(/* webpackChunkName:"music" */ '../components/music/Music.vue')
+const Hotlist = () => import(/* webpackChunkName:"music" */ '../components/music/Hotlist.vue')
+const List = () => import(/* webpackChunkName:"music" */ '../components/music/List.vue')
+
 Vue.use(infiniteScroll)
 Vue.use(VueRouter)
 const routes = [

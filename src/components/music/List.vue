@@ -104,7 +104,7 @@ export default {
         this.listData = this.$store.state.myList[
           this.$store.state.currentMyList
         ].songs;
-        this.cover = require("../" +
+        this.cover = require("@/assets/" +
           this.$store.state.myList[this.$store.state.currentMyList].cover +
           ".jpg");
         this.title = this.$route.params.id;

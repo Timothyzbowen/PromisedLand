@@ -51,7 +51,6 @@
   </el-container>
 </template>
 <script>
-import city_data from "./city_data.js";
 export default {
   created() {
     this.getStockUrl();
@@ -63,15 +62,15 @@ export default {
       timer: "",
       newsImgs: [
         {
-          url: require("./images/01.jpg"),
+          url: require("../assets/01.jpg"),
           info: "江西婺源800年古桥被洪水损毁",
         },
         {
-          url: require("./images/02.jpg"),
+          url: require("../assets/02.jpg"),
           info: "注意！全国启动“借道左转”车道，走错扣6分罚200元",
         },
         {
-          url: require("./images/03.jpg"),
+          url: require("../assets/03.jpg"),
           info: "俄罗斯S500防空导弹即将服役 卫星飞机全能打",
         },
       ],
